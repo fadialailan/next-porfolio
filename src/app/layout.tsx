@@ -34,11 +34,11 @@ export default function RootLayout({
         <title>Porfolio Website</title>
         <meta name="description" content="a porfolio website used to show my porfolio"/>
       </head>
-      <body className={[inter.className, "dark:bg-gray-700", darkEnabled && "dark"].join(" ")}>
+      <body className={`${inter.className} dark:bg-gray-700 dark:text-white ${darkEnabled && 'dark'}`}>
         <nav className="[&>a]:m-2 p-1">
-          <Link className="dark:text-white" href="/">Home</Link>
-          <Link className="dark:text-white" href="/attrubution">Attribution</Link>
-          <button className="float-right p-1 dark:text-white border-black dark:border-white border-2 rounded-s border-solid" onClick={toggleDarkTheme}>dark theme</button>
+          <Link href="/">Home</Link>
+          <Link href="/attrubution">Attribution</Link>
+          <button className="float-right p-1 border-black dark:border-white border-2 rounded-s border-solid" onClick={toggleDarkTheme}>dark theme</button>
         </nav>
         {children}
       </body>
