@@ -1,7 +1,8 @@
 // import * as gettext from 'gettext';
 import gettext from "@/scripts/gettext";
 
-export default function Home() {
+export default async function Home() {
+
   return (
     <main>
       <div className="font-bold text-3xl">
