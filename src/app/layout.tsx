@@ -5,8 +5,7 @@ import { icon_url } from "@/scripts/global";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import gettext from "@/scripts/gettext";
-import { THEME } from "@/scripts/enums";
-import { useIsMount } from "@/scripts/useIsMount";
+import { THEME } from "@/models/enums";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,31 +16,29 @@ export default function RootLayout({
 }>) {
 
   const [darkEnabled, setDarkEnabled] = useState<boolean>(false);
-  const isMount = useIsMount();
   const theme_key = 'theme';
 
   useEffect(() => {
-    if (isMount) {
-      const theme_value = localStorage.getItem(theme_key)
-      switch (theme_value) {
-        case THEME.DARK:
-          setDarkEnabled(true);
-          break;
-        default:
-          setDarkEnabled(false);
-          break;
-      }
-      return;
+    const theme_value = localStorage.getItem(theme_key)
+    switch (theme_value) {
+      case THEME.DARK:
+        setDarkEnabled(true);
+        break;
+      default:
+        setDarkEnabled(false);
+        break;
     }
-    if (darkEnabled) {
-      localStorage.setItem(theme_key, THEME.DARK);
-    } else {
-      localStorage.setItem(theme_key, THEME.LIGHT);
-    }
-  }, [darkEnabled])
+  }, [])
 
   function toggleDarkTheme() {
     setDarkEnabled((darkEnabled) => !darkEnabled)
+
+    // runs before darkEnabled is flipped
+    if (darkEnabled) {
+      localStorage.setItem(theme_key, THEME.LIGHT)
+    } else {
+      localStorage.setItem(theme_key, THEME.DARK)
+    }
   }
 
   return (
@@ -55,7 +52,7 @@ export default function RootLayout({
         <title>Porfolio Website</title>
         <meta name="description" content="a porfolio website used to show my porfolio" />
       </head>
-      <body dir="ltr" className={`${inter.className} dark:bg-gray-700 dark:text-white ${darkEnabled && 'dark'}`}>
+      <body dir="ltr" className={`${inter.className} dark:bg-gray-700 dark:text-white ${darkEnabled?'dark':''}`}>
         <nav className="[&>a]:m-2 p-1">
           <Link href="/">{gettext.gettext('Home')}</Link>
           <Link href="/attrubution">{gettext.gettext('Attribution')}</Link>
