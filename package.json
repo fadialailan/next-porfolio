@@ -9,11 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@prisma/client": "^5.11.0",
     "@types/node-gettext": "^3.0.6",
     "micromustache": "^8.0.3",
     "next": "14.1.4",
     "node-gettext": "^3.0.0",
+    "postgres": "^3.4.4",
     "react": "^18",
     "react-dom": "^18",
     "react-markdown": "^9.0.1"
@@ -26,7 +26,6 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
-    "prisma": "^5.11.0",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
   }

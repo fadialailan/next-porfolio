@@ -1,4 +1,4 @@
-import { Project } from "@prisma/client"
+import { Project } from "@/models/database"
 import { ProjectCard } from "./ProjectCard"
 
 

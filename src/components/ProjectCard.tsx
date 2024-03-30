@@ -1,4 +1,5 @@
-import { Project } from "@prisma/client";
+import { Project } from "@/models/database";
+
 
 
 export function ProjectCard(props:Project) {
