@@ -1,6 +1,8 @@
 export interface Project {
   id: number;
   image_path: String | null;
+  github_url : String | null;
+  website_url : String | null;
 }
 
 export interface Language {
