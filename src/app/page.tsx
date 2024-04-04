@@ -1,14 +1,18 @@
 // import * as gettext from 'gettext';
-import { ProjectCard } from "@/components/ProjectCard";
+
+import { ProjectView } from "@/components/ProjectsView";
 import gettext from "@/scripts/gettext";
+import sql, { getProjectsTextByLanguage } from "@/scripts/sql";
+
+sql`SELECT project_id`
 
 export default async function Home() {
-
+  const project_texts = await getProjectsTextByLanguage("en")
   return (
     <main>
-      <div className="font-bold text-3xl">
+      <div className="p-4 font-bold text-3xl">
         {gettext.gettext("Hello Porfolio")}
-        <ProjectCard id={0} description_en={null} name_en="Pixel-art-scaler"/>
+        <ProjectView  projects_text={project_texts}/>
       </div>
     </main>
   );
