@@ -4,7 +4,6 @@ import "./globals.css";
 import { icon_url } from "@/scripts/global";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import gettext from "@/scripts/gettext";
 import { THEME } from "@/models/enums";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -54,8 +53,8 @@ export default function RootLayout({
       </head>
       <body dir="ltr" className={`${inter.className} dark:bg-gray-700 dark:text-white ${darkEnabled?'dark':''}`}>
         <nav className="[&>a]:m-2 p-1">
-          <Link href="/">{gettext.gettext('Home')}</Link>
-          <Link href="/attrubution">{gettext.gettext('Attribution')}</Link>
+          <Link href="/">{('Home')}</Link>
+          <Link href="/attrubution">{('Attribution')}</Link>
           <button className="float-end p-1 border-black dark:border-white border-2 rounded-s border-solid" onClick={toggleDarkTheme}>dark theme</button>
         </nav>
         {children}
