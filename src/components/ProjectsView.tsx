@@ -1,4 +1,4 @@
-import { ProjectText } from "@/models/database"
+import ProjectText from "@/schemas/public/ProjectText"
 import { ProjectCard } from "./ProjectCard"
 
 

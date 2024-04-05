@@ -1,4 +1,4 @@
-import { ProjectText } from "@/models/database";
+import ProjectText from "@/schemas/public/ProjectText";
 
 export type ProjectCardProps = Pick<ProjectText, "name" | "project_id">;
 

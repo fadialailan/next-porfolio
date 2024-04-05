@@ -1,4 +1,4 @@
-import { ProjectText } from "@/models/database";
+import ProjectText from "@/schemas/public/ProjectText";
 import postgres from "postgres";
 
 export const sql = postgres(process.env.DATABASE_URL!, {})
