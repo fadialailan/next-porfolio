@@ -1,6 +1,6 @@
 'use client'
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 import { icon_url } from "@/scripts/global";
 import Link from "next/link";
 import { useEffect, useState } from "react";
