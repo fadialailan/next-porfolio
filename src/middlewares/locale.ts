@@ -27,6 +27,8 @@ export async function getLocale(request:NextRequest) {
 
 export async function localeMiddleWare(request:NextRequest) {
   const locale = await getLocale(request);
+  const pathnames = request.nextUrl.pathname.split('/')
+  const new_pathname = pathnames.splice(0,0,locale).join('/')
   return NextResponse.redirect(new URL(locale, request.url))
 
 }
