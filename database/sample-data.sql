@@ -1,6 +1,6 @@
-INSERT INTO language (iso_code, name, direction, text_home) VALUES
-	('en', 'English', 'ltr', 'Home'),
-	('ar', 'العربية', 'rtl', 'بيت')
+INSERT INTO language (iso_code, name, direction, text_home, text_title, text_description) VALUES
+	('en', 'English', 'ltr', 'Home', 'Porfolio Website', 'a porfolio website used to show my porfolio'),
+	('ar', 'العربية', 'rtl', 'بيت', 'موقع المشاريع', 'موقع لإظهار المساريع التي عملة عليها')
 ;
 
 DO $$

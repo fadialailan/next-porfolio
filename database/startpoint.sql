@@ -25,7 +25,9 @@ CREATE TABLE language (
 	iso_code CHAR(2) PRIMARY KEY,
 	name TEXT NOT NULL,
 	direction text_direction NOT NULL,
-	text_home TEXT NOT NULL
+	text_home TEXT NOT NULL,
+  text_title TEXT NOT NULL,
+  text_description TEXT NOT NULL
 );
 
 CREATE TABLE project_text(
