@@ -3,14 +3,12 @@ import sql, { getProjectsTextByLanguage } from "@/scripts/sql";
 
 sql`SELECT project_id`
 
-export default async function Home() {
-  const project_texts = await getProjectsTextByLanguage("en")
+export default async function Home({params}:{params:{locale:string;}}) {
+
+  const project_texts = await getProjectsTextByLanguage(params.locale)
   return (
-    <main>
-      <div className="p-4 font-bold text-3xl">
-        {("Hello Porfolio")}
+      <div className="p-4">
         <ProjectView  projects_text={project_texts}/>
       </div>
-    </main>
   );
 }
