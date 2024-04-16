@@ -45,7 +45,7 @@ export function Navbar(props: NavbarProps) {
   }
 
   return (
-    <body dir="ltr" className={`${inter.className} dark:bg-gray-700 dark:text-white ${darkEnabled ? 'dark' : ''}`}>
+    <body className={`${inter.className} dark:bg-gray-700 dark:text-white ${darkEnabled ? 'dark' : ''}`}>
       <nav className="[&>a]:m-2 p-1">
         <Link href="/">{language_info.text_home}</Link>
         <button className="float-end p-1 border-black dark:border-white border-2 rounded-s border-solid" onClick={toggleDarkTheme}>dark theme</button>

@@ -28,6 +28,7 @@ export default async function RootLayout({
     }
     return (<></>)
   }
+  
 
   return (
     <html lang={language_info.iso_code} dir={language_info.direction}>
@@ -37,7 +38,7 @@ export default async function RootLayout({
           type="image/svg+xml"
           href={icon_url}
         />
-        <title>Porfolio Website</title>
+        <title>{language_info.text_title}</title>
         <meta name="description" content="a porfolio website used to show my porfolio" />
       </head>
       <Navbar language_info={language_info!}>{children}</Navbar>
