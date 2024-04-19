@@ -7,8 +7,8 @@ export default async function Home({params}:{params:{locale:string;}}) {
 
   const project_texts = await getProjectsTextByLanguage(params.locale)
   return (
-      <div className="p-4">
+      <main className="p-4">
         <ProjectView  projects_text={project_texts}/>
-      </div>
+      </main>
   );
 }

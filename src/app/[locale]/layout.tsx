@@ -5,6 +5,10 @@ import Navbar from "@/components/Navbar";
 import { getLanguageInfo } from "@/scripts/sql";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import { Inter } from "next/font/google";
+
+
+const inter = Inter({ subsets: ["latin"] });
 
 export default async function RootLayout({
   children,
@@ -41,7 +45,10 @@ export default async function RootLayout({
         <title>{language_info.text_title}</title>
         <meta name="description" content="a porfolio website used to show my porfolio" />
       </head>
-      <Navbar language_info={language_info!}>{children}</Navbar>
+    <body className={`${inter.className} dark:bg-gray-700 dark:text-white`}>
+      <Navbar language_info={language_info!}/>
+      {children}
+    </body>
     </html>
   );
 }
