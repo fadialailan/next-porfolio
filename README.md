@@ -17,6 +17,19 @@ run the following in order to install the dependencies, I will use npm but you c
 npm install
 ```
 
+## Setting up the database
+
+the codebase uses postgresql, so you need to have it setup, once setup you can setup the schema using [go-migrate]
+
+this codebase uses [go-migrate] for its schema migration, to migrate run
+
+```bash
+migrate -path='database/migrations' -database=$DATABASE_URL up
+```
+
+this will create the schema but it will have no data, for a test setup I recommend running the script
+at `database/sample-data.sql`, this script will populate the database with sample data
+
 ## Running locally
 
 First, run the development server:
@@ -27,3 +40,4 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+[go-migrate]:https://github.com/golang-migrate/migrate
