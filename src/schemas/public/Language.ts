@@ -13,6 +13,12 @@ export default interface Language {
   name: string;
 
   direction: TextDirection;
+
+  text_home: string;
+
+  text_title: string;
+
+  text_description: string;
 }
 
 /** Represents the initializer for the table public.language */
@@ -22,6 +28,12 @@ export interface LanguageInitializer {
   name: string;
 
   direction: TextDirection;
+
+  text_home: string;
+
+  text_title: string;
+
+  text_description: string;
 }
 
 /** Represents the mutator for the table public.language */
@@ -31,4 +43,10 @@ export interface LanguageMutator {
   name?: string;
 
   direction?: TextDirection;
+
+  text_home?: string;
+
+  text_title?: string;
+
+  text_description?: string;
 }

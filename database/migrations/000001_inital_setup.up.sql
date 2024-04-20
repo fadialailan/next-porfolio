@@ -1,27 +1,16 @@
--- drop constrains
-ALTER TABLE IF EXISTS project_text DROP CONSTRAINT IF EXISTS project_text_project_id_fkey;
-ALTER TABLE IF EXISTS project_text DROP CONSTRAINT IF EXISTS project_text_language_iso_code_fkey;
-
--- drop tables
-DROP TABLE IF EXISTS project_text;
-DROP TABLE IF EXISTS project;
-DROP TABLE IF EXISTS language;
-
--- drop types
-DROP TYPE IF EXISTS text_direction;
 
 -- create types
 CREATE TYPE text_direction AS ENUM ('rtl', 'ltr');
 
 -- create tables
-CREATE TABLE project(
+CREATE TABLE IF NOT EXISTS project(
 	id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
 	image_path TEXT,
 	github_url TEXT,
 	website_url TEXT
 );
 
-CREATE TABLE language (
+CREATE TABLE IF NOT EXISTS language (
 	iso_code CHAR(2) PRIMARY KEY,
 	name TEXT NOT NULL,
 	direction text_direction NOT NULL,
@@ -30,7 +19,7 @@ CREATE TABLE language (
 	text_description TEXT NOT NULL
 );
 
-CREATE TABLE project_text(
+CREATE TABLE IF NOT EXISTS project_text(
 	language_iso_code CHAR(2) NOT NULL,
 	project_id UUID NOT NULL,
 	name TEXT NOT NULL,
