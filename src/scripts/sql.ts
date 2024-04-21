@@ -1,6 +1,7 @@
 `use server`
 
 import Language from "@/schemas/public/Language";
+import Project from "@/schemas/public/Project";
 import ProjectText from "@/schemas/public/ProjectText";
 import postgres from "postgres";
 
@@ -23,6 +24,23 @@ export async function getProjectsTextByLanguage(language_code: string) {
     FROM project_text WHERE language_iso_code = ${language_code}
   `
   return project_text_rows_request
+}
+
+export async function getProjectById(uuid:string) {
+  'use server'
+  const project_rows_request = sql<Project[]>`SELECT * FROM project WHERE id = ${uuid}`;
+  const selected_project = (await project_rows_request)[0];
+  return selected_project;
+}
+
+export async function getProjectWithText(project_id:string, language_code:string) {
+  'use server'
+  const rows_request = sql<(Project & ProjectText)[]>`
+    SELECT * FROM project JOIN project_text ON project.id = project_text.project_id
+    WHERE project.id = ${project_id} AND project_text.language_iso_code = ${language_code}
+  `;
+  const selected_row = await rows_request;
+  return selected_row;
 }
 
 export async function getLanguageInfo(language_code: string): Promise<Language | undefined> {
