@@ -39,7 +39,7 @@ export async function getProjectWithText(project_id:string, language_code:string
     SELECT * FROM project JOIN project_text ON project.id = project_text.project_id
     WHERE project.id = ${project_id} AND project_text.language_iso_code = ${language_code}
   `;
-  const selected_row = await rows_request;
+  const selected_row = (await rows_request)[0];
   return selected_row;
 }
 
