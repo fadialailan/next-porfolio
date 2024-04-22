@@ -46,7 +46,7 @@ export function Navbar(props: NavbarProps) {
 
   return (
     <nav className="[&>a]:m-2 p-1">
-      <Link href="/">{language_info.text_home}</Link>
+      <Link href={`/${language_info.iso_code}`}>{language_info.text_home}</Link>
       <button className="float-end p-1 border-black dark:border-white border-2 rounded-lg border-solid"
         onClick={toggleDarkTheme}
       >{darkEnabled? <Moon/>:<Sun/>}</button>
