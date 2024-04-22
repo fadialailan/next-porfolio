@@ -4,6 +4,7 @@ import { THEME } from "@/models/enums";
 import Language from "@/schemas/public/Language";
 import Link from "next/link";
 import { useEffect, useState } from "react"
+import { Moon, Sun } from "react-feather";
 
 
 
@@ -44,10 +45,12 @@ export function Navbar(props: NavbarProps) {
   }
 
   return (
-      <nav className="[&>a]:m-2 p-1">
-        <Link href="/">{language_info.text_home}</Link>
-        <button className="float-end p-1 border-black dark:border-white border-2 rounded-s border-solid" onClick={toggleDarkTheme}>dark theme</button>
-      </nav>
+    <nav className="[&>a]:m-2 p-1">
+      <Link href="/">{language_info.text_home}</Link>
+      <button className="float-end p-1 border-black dark:border-white border-2 rounded-lg border-solid"
+        onClick={toggleDarkTheme}
+      >{darkEnabled? <Moon/>:<Sun/>}</button>
+    </nav>
   )
 
 }
