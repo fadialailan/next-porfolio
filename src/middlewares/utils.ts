@@ -8,3 +8,11 @@ export function nextFilter(request:NextRequest) {
   }
   return false
 }
+
+export function imagesFilter(request:NextRequest) {
+  const pathname = request.nextUrl.pathname.split('/')
+  if (pathname[0] === "images" || pathname[1] === "images") {
+    return true;
+  }
+  return false
+}
