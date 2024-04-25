@@ -1,2 +1,3 @@
 export const base_url = "";
-export const icon_url = base_url + "/Source-code-icon.svg";
+export const images_url = "images"
+export const icon_url = images_url + "/Source-code-icon.svg";
