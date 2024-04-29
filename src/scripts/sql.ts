@@ -1,5 +1,6 @@
 `use server`
 
+import { ProjectTextImage } from "@/models/global_types";
 import Language from "@/schemas/public/Language";
 import Project from "@/schemas/public/Project";
 import ProjectText from "@/schemas/public/ProjectText";
@@ -22,6 +23,17 @@ export async function getProjectsTextByLanguage(language_code: string) {
   const project_text_rows_request = sql<ProjectText[]>`SELECT
     language_iso_code, project_id, name, description
     FROM project_text WHERE language_iso_code = ${language_code}
+  `
+  return project_text_rows_request
+}
+
+
+export async function getProjectsTextImageByLanguage(language_code: string) {
+  'use server'
+  const project_text_rows_request = sql<ProjectTextImage[]>`SELECT
+    language_iso_code, project_id, name, description, image_path
+  FROM project_text JOIN project ON project_text.project_id = project.id
+  WHERE language_iso_code = ${language_code};
   `
   return project_text_rows_request
 }
