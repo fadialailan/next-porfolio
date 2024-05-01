@@ -12,29 +12,34 @@ DECLARE
 	project4_id UUID = gen_random_uuid();
 	project5_id UUID = gen_random_uuid();
 BEGIN
-	INSERT INTO project (id, github_url, website_url) VALUES 
+	INSERT INTO project (id, image_path, github_url, website_url) VALUES 
 		(
 			project1_id,
+			NULL,
 			'https://github.com/fadialailan/main-webpage',
 			'https://fadialailan.github.io/main-webpage/'
 		),
 		(
 			project2_id,
+			'images/cplusplus.svg',
 			'https://github.com/fadialailan/pixel-art-scaler',
 			NULL
 		),
 		(
 			project3_id,
 			NULL,
+			NULL,
 			NULL
 		),
 		(
 			project4_id,
 			NULL,
+			NULL,
 			NULL
 		),
 		(
 			project5_id,
+			NULL,
 			NULL,
 			NULL
 		)

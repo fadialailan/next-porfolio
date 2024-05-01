@@ -1,9 +1,9 @@
-import ProjectText from "@/schemas/public/ProjectText"
 import { ProjectCard } from "./ProjectCard"
+import { ProjectTextImage } from "@/models/global_types";
 
 
 export interface ProjectViewProps {
-  projects_text: ProjectText[]
+  projects_text: ProjectTextImage[]
   locale: string;
 }
 
@@ -14,7 +14,7 @@ export function ProjectView(props: ProjectViewProps) {
       style={{gridTemplateColumns: "repeat(auto-fit, minmax(24rem,1fr))"}}
     >
       {props.projects_text.map((value, index) => {
-        return <ProjectCard key={index} name={value.name} project_id={value.project_id} locale={props.locale} />
+        return <ProjectCard key={index} project_text={value} />
       })}
     </div>
   )
