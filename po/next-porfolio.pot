@@ -6,7 +6,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: next-porfolio\n"
+"Project-Id-Version: next-portfolio\n"
 "Report-Msgid-Bugs-To: Fadi Alailan <fadialailan@protonmail.com>\n"
 "POT-Creation-Date: 2024-03-25 12:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"

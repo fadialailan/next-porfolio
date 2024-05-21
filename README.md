@@ -1,6 +1,6 @@
 # About
 
-a work in progress porfolio website
+a work in progress portfolio website
 
 # Why not use a static website generator like Astro Js
 

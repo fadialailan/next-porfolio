@@ -43,7 +43,7 @@ export default async function RootLayout({
           href={icon_url}
         />
         <title>{language_info.text_title}</title>
-        <meta name="description" content="a porfolio website used to show my porfolio" />
+        <meta name="description" content="a portfolio website used to show my portfolio" />
       </head>
     <body className={`${inter.className} dark:bg-gray-700 dark:text-white`}>
       <Navbar language_info={language_info!}/>

@@ -1,5 +1,5 @@
 INSERT INTO language (iso_code, name, direction, text_home, text_title, text_description) VALUES
-	('en', 'English', 'ltr', 'Home', 'Porfolio Website', 'a porfolio website used to show my porfolio'),
+	('en', 'English', 'ltr', 'Home', 'Porfolio Website', 'a portfolio website used to show my portfolio'),
 	('ar', 'العربية', 'rtl', 'بيت', 'موقع المشاريع', 'موقع لإظهار المساريع التي عملة عليها')
 ;
 
