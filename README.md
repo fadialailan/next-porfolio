@@ -9,6 +9,10 @@ is dynamicly rendered on the server compared to a staticaly generated website
 
 # Running
 
+## Environment Variables
+
+a `.env.sample` file has been provided, fill in the environment variables and rename the file to `.env.local`
+
 ## Dependencies
 
 run the following in order to install the dependencies, I will use npm but you can use any npm alternative like yarn, pnpm, bun and e.t.c:
@@ -26,6 +30,8 @@ this codebase uses [go-migrate] for its schema migration, to migrate run
 ```bash
 migrate -path='database/migrations' -database=$DATABASE_URL up
 ```
+
+NOTE: `$DATABASE_URL` is the same as the one you put in `.env.local`
 
 this will create the schema but it will have no data, for a test setup I recommend running the script
 at `database/sample-data.sql`, this script will populate the database with sample data
